@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'calculation.dart';
 
 void main() {
@@ -59,7 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
   // ---------- For Evaluation ----------
   String display = "";
   String result = "";
-  void calc(){
+
+  void calc() {
     setState(() {
       result = calculation(display);
     });
