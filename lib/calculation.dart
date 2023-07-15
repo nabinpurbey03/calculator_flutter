@@ -1,4 +1,7 @@
-void calculation(String data, String result) {
+import 'dart:io';
+
+String calculation(String data) {
+  String result = "";
   String operand1 = "";
   String operand2 = "";
   String operator = "";
@@ -37,4 +40,5 @@ void calculation(String data, String result) {
         break;
     }
   }
+  return result;
 }
