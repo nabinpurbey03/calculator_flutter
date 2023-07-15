@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'calculation.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -58,46 +60,46 @@ class _MyHomePageState extends State<MyHomePage> {
   String display = "";
   String result = "";
 
-  void calculation(String data) {
-    String operand1 = "";
-    String operand2 = "";
-    String operator = "";
-    setState(() {});
-    for (int i = 0; i < data.length; i++) {
-      String sc = data[i];
-      if (sc == "+" || sc == "-" || sc == "*" || sc == "/" || sc == "%") {
-        operator = data[i];
-        break;
-      } else {
-        operand1 += data[i];
-      }
-    }
-    int operatorIndex = data.indexOf(operator);
-    for (int i = operatorIndex + 1; i < data.length; i++) {
-      operand2 += data[i];
-    }
-    var num1 = double.tryParse(operand1);
-    var num2 = double.tryParse(operand2);
-    if (num1 != null && num2 != null) {
-      switch (operator) {
-        case "+":
-          result = (num1 + num2).toString();
-          break;
-        case "-":
-          result = (num1 - num2).toString();
-          break;
-        case "*":
-          result = (num1 * num2).toString();
-          break;
-        case "/":
-          result = (num1 / num2).toString();
-          break;
-        case "%":
-          result = (num1 * (num2 / 100)).toString();
-          break;
-      }
-    }
-  }
+  // void calculation(String data) {
+  //   String operand1 = "";
+  //   String operand2 = "";
+  //   String operator = "";
+  //   setState(() {});
+  //   for (int i = 0; i < data.length; i++) {
+  //     String sc = data[i];
+  //     if (sc == "+" || sc == "-" || sc == "*" || sc == "/" || sc == "%") {
+  //       operator = data[i];
+  //       break;
+  //     } else {
+  //       operand1 += data[i];
+  //     }
+  //   }
+  //   int operatorIndex = data.indexOf(operator);
+  //   for (int i = operatorIndex + 1; i < data.length; i++) {
+  //     operand2 += data[i];
+  //   }
+  //   var num1 = double.tryParse(operand1);
+  //   var num2 = double.tryParse(operand2);
+  //   if (num1 != null && num2 != null) {
+  //     switch (operator) {
+  //       case "+":
+  //         result = (num1 + num2).toString();
+  //         break;
+  //       case "-":
+  //         result = (num1 - num2).toString();
+  //         break;
+  //       case "*":
+  //         result = (num1 * num2).toString();
+  //         break;
+  //       case "/":
+  //         result = (num1 / num2).toString();
+  //         break;
+  //       case "%":
+  //         result = (num1 * (num2 / 100)).toString();
+  //         break;
+  //     }
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -215,7 +217,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     InputButtons(input: "</>", getInput: () {}),
                     InputButtons(input: "0", getInput: () => inputDisplay("0")),
                     InputButtons(input: ".", getInput: () => inputDisplay(".")),
-                    InputButtons(input: "=", getInput: () => calculation(display)),
+                    InputButtons(input: "=", getInput: () => calculation(display, result)),
                   ],
                 ),
               ],
