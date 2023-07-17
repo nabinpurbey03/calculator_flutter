@@ -79,115 +79,118 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontSize: 30,
                   color: Colors.purple)),
           centerTitle: true),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            color: const Color(0xff023047),
-            // height: MediaQuery.of(context).size.height * 0.10,
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 5),
-                  width: MediaQuery.of(context).size.width,
-                  child: const Text(
-                    "Calculator",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 50,
-                        color: Colors.white),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              color: const Color(0xff023047),
+              // height: MediaQuery.of(context).size.height * 0.10,
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 5),
+                    width: MediaQuery.of(context).size.width,
+                    child: const Text(
+                      "Calculator",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 50,
+                          color: Colors.white),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 28),
-                Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 15),
-                    width: MediaQuery.of(context).size.width,
-                    // color: Colors.cyanAccent,
-                    child: Text(
-                      display,
-                      textAlign: TextAlign.end,
-                      style: const TextStyle(
-                          fontSize: 55,
-                          color: Colors.white,
-                          overflow: TextOverflow.fade),
-                    )),
-                const SizedBox(height: 5),
-                Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 15),
-                    width: MediaQuery.of(context).size.width,
-                    child: Text(
-                      result,
-                      textAlign: TextAlign.end,
-                      style: const TextStyle(
-                          fontSize: 40,
-                          color: Colors.white,
-                          overflow: TextOverflow.fade),
-                    )),
-              ],
+                  const SizedBox(height: 28),
+                  Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 15),
+                      width: MediaQuery.of(context).size.width,
+                      // color: Colors.cyanAccent,
+                      child: Text(
+                        display,
+                        textAlign: TextAlign.end,
+                        style: const TextStyle(
+                            fontSize: 55,
+                            color: Colors.white,
+                            overflow: TextOverflow.fade),
+                      )),
+                  const SizedBox(height: 5),
+                  Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 15),
+                      width: MediaQuery.of(context).size.width,
+                      child: Text(
+                        result,
+                        textAlign: TextAlign.end,
+                        style: const TextStyle(
+                            fontSize: 40,
+                            color: Colors.white,
+                            overflow: TextOverflow.fade),
+                      )),
+                ],
+              ),
             ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 0.58,
-            decoration: const BoxDecoration(
-                color: Color(0xffEEE2DE),
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(15),
-                    topLeft: Radius.circular(15))),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InputButtons(input: "AC", getInput: () => ac()),
-                    InputButtons(input: "X", getInput: () => x()),
-                    InputButtons(input: "%", getInput: () => inputDisplay("%")),
-                    InputButtons(input: "/", getInput: () => inputDisplay("/")),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InputButtons(input: "7", getInput: () => inputDisplay("7")),
-                    InputButtons(input: "8", getInput: () => inputDisplay("8")),
-                    InputButtons(input: "9", getInput: () => inputDisplay("9")),
-                    InputButtons(input: "*", getInput: () => inputDisplay("*")),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InputButtons(input: "4", getInput: () => inputDisplay("4")),
-                    InputButtons(input: "5", getInput: () => inputDisplay("5")),
-                    InputButtons(input: "6", getInput: () => inputDisplay("6")),
-                    InputButtons(input: "-", getInput: () => inputDisplay("-")),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InputButtons(input: "1", getInput: () => inputDisplay("1")),
-                    InputButtons(input: "2", getInput: () => inputDisplay("2")),
-                    InputButtons(input: "3", getInput: () => inputDisplay("3")),
-                    InputButtons(input: "+", getInput: () => inputDisplay("+")),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InputButtons(input: "</>", getInput: () {}),
-                    InputButtons(input: "0", getInput: () => inputDisplay("0")),
-                    InputButtons(input: ".", getInput: () => inputDisplay(".")),
-                    InputButtons(input: "=", getInput: () => calc()),
-                  ],
-                ),
-              ],
-            ),
-          )
-        ],
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.58,
+              decoration: const BoxDecoration(
+                  color: Color(0xffEEE2DE),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(15),
+                      topLeft: Radius.circular(15))),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InputButtons(input: "AC", getInput: () => ac()),
+                      InputButtons(input: "X", getInput: () => x()),
+                      InputButtons(input: "%", getInput: () => inputDisplay("%")),
+                      InputButtons(input: "/", getInput: () => inputDisplay("/")),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InputButtons(input: "7", getInput: () => inputDisplay("7")),
+                      InputButtons(input: "8", getInput: () => inputDisplay("8")),
+                      InputButtons(input: "9", getInput: () => inputDisplay("9")),
+                      InputButtons(input: "*", getInput: () => inputDisplay("*")),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InputButtons(input: "4", getInput: () => inputDisplay("4")),
+                      InputButtons(input: "5", getInput: () => inputDisplay("5")),
+                      InputButtons(input: "6", getInput: () => inputDisplay("6")),
+                      InputButtons(input: "-", getInput: () => inputDisplay("-")),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InputButtons(input: "1", getInput: () => inputDisplay("1")),
+                      InputButtons(input: "2", getInput: () => inputDisplay("2")),
+                      InputButtons(input: "3", getInput: () => inputDisplay("3")),
+                      InputButtons(input: "+", getInput: () => inputDisplay("+")),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InputButtons(input: "</>", getInput: () {}),
+                      InputButtons(input: "0", getInput: () => inputDisplay("0")),
+                      InputButtons(input: ".", getInput: () => inputDisplay(".")),
+                      InputButtons(input: "=", getInput: () => calc()),
+                    ],
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

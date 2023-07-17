@@ -49,10 +49,10 @@ String calculator(String operand1, String operand2, String operator) {
         result = (num1 * num2).toString();
         break;
       case "/":
-        result = (num1 / num2).ceil().toString();
+        result = (num1 / num2).toString();
         break;
       case "%":
-        result = (num1 * (num2 / 100)).ceil().toString();
+        result = (num1 * (num2 / 100)).toString();
         break;
     }
   }
